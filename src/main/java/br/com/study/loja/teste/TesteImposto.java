@@ -1,4 +1,4 @@
-package br.com.study.loja;
+package br.com.study.loja.teste;
 
 import br.com.study.loja.imposto.CalculadoraDeImposto;
 import br.com.study.loja.imposto.impl.ICMS;
@@ -11,7 +11,7 @@ import java.math.RoundingMode;
 public class TesteImposto {
 
     public static void main(String[] args) {
-        Orcamento orcamento = new Orcamento(BigDecimal.valueOf(100));
+        Orcamento orcamento = new Orcamento(BigDecimal.valueOf(100),1);
         CalculadoraDeImposto calculadoraDeImposto = new CalculadoraDeImposto();
 
         BigDecimal impostoTotal = calculadoraDeImposto.calcular(orcamento, new ICMS());
