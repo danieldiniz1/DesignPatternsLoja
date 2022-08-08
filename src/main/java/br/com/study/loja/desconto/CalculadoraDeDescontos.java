@@ -6,15 +6,15 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public class CalculadoraDeDescontos {
-
-
     public BigDecimal calcular(Orcamento orcamento, List<Desconto> listaDescontos){
         double somaDescontos = 0;
         for (Desconto desconto : listaDescontos) {
-            BigDecimal descontoCalculado = desconto.calcular(orcamento);
-            System.out.println("valor do desconto: " + descontoCalculado.toString() + " da classe " + desconto.getClass().getName());
-            somaDescontos += descontoCalculado.doubleValue();
-            System.out.println("valor do somaDescontos após iteração: " + somaDescontos);
+            if(desconto.deveAplicar(orcamento)) {
+                BigDecimal descontoCalculado = desconto.calcular(orcamento);
+                System.out.println("valor do desconto: " + descontoCalculado.toString() + " da classe " + desconto.getClass().getName());
+                somaDescontos += descontoCalculado.doubleValue();
+                System.out.println("valor do somaDescontos após iteração: " + somaDescontos);
+            }
         }
         BigDecimal somaDescontoBigDecimal = BigDecimal.valueOf(somaDescontos);
         System.out.println("valor do somaDescontos fora iteração: " + somaDescontos);
