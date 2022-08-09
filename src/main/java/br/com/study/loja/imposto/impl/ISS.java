@@ -5,12 +5,16 @@ import br.com.study.loja.orcamento.Orcamento;
 
 import java.math.BigDecimal;
 
-public class ISS implements Imposto {
+public class ISS extends Imposto {
 
     private BigDecimal percentualImposto;
 
+    public ISS(Imposto outro){
+        super(outro);
+    }
+
     @Override
-    public BigDecimal calcular(Orcamento orcamento) {
+    public BigDecimal realizarCalculo(Orcamento orcamento) {
         percentualImposto = new BigDecimal(0.10);
         return orcamento.getValor().multiply(percentualImposto);
     }

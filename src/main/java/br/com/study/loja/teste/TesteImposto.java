@@ -14,7 +14,7 @@ public class TesteImposto {
         Orcamento orcamento = new Orcamento(BigDecimal.valueOf(100),1);
         CalculadoraDeImposto calculadoraDeImposto = new CalculadoraDeImposto();
 
-        BigDecimal impostoTotal = calculadoraDeImposto.calcular(orcamento, new ICMS());
+        BigDecimal impostoTotal = calculadoraDeImposto.calcular(orcamento, new ICMS(new ISS(null)));
 
         System.out.println(calculadoraDeImposto.getCalculaImposto().getClass().getName());
         System.out.println(impostoTotal.setScale(2, RoundingMode.HALF_UP));
