@@ -11,7 +11,7 @@ public class Orcamento {
     private Integer qtdeItens;
     private SituacaoOrçamento situacao;
 
-    public Orcamento(BigDecimal valor, Integer qtdeItens, SituacaoOrçamento situacao) {
+    public Orcamento(BigDecimal valor, Integer qtdeItens) {
         this.valor = valor;
         this.qtdeItens = qtdeItens;
         setSituacao(new EmAnalise());
